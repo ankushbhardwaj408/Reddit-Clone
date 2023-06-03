@@ -34,5 +34,8 @@
   },
   "devDependencies": {
     "@types/safe-json-stringify": "^1.1.2"
+  },
+    "engines": {
+    "node": "16.x"
   }
 }
