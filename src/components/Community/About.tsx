@@ -13,7 +13,7 @@ import {
   Spinner,
 } from "@chakra-ui/react";
 import { error } from "console";
-import { doc, updateDoc } from "firebase/firestore";
+import { doc, setDoc, updateDoc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadString } from "firebase/storage";
 import moment from "moment";
 
@@ -52,6 +52,16 @@ setUploadingImage(true);
         imageUrl: downloadURL,
       });
 
+
+      const userRef = doc(
+        firestore,
+        `users/${user?.uid}/communitySnippets`,
+        communityData.id
+      );
+       await updateDoc(userRef, { imageUrl :communityData.imageUrl});
+
+      
+   
 setCommunityStateValue((prev)=>({
   ...prev,
   currentCommunity:{...prev.currentCommunity,
