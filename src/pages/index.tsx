@@ -156,8 +156,9 @@ return()=>{
           <PostLoader />
         ) : (
           <Stack>
-            {postStateValue.posts.map((item) => (
+            {postStateValue.posts.map((item,index) => (
               <PostItem
+              key={index}
                 post={item}
                 userIsCreator={user?.uid === item.creatorId}
                 onVote={onVote}
