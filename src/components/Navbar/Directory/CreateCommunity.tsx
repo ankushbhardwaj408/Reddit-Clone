@@ -24,6 +24,7 @@ const CreateCommunity: React.FC<CreateCommunityProps> = () => {
           .filter((snippet) => snippet.isModerator)
           .map((snippet) => (
             <MenuListItem
+            key={snippet.communityId}
               displayText={`r/${snippet.communityId}`}
               icon={FaReddit}
               iconColor={"brand.100"}
@@ -49,6 +50,7 @@ const CreateCommunity: React.FC<CreateCommunityProps> = () => {
         </MenuItem>
         {mySnippets.map((snippet) => (
           <MenuListItem
+          key={snippet.communityId}
             displayText={`r/${snippet.communityId}`}
             icon={FaReddit}
             iconColor={"gray.500"}

@@ -125,9 +125,10 @@ const NewPostForm: React.FC<NewPostFormProps> = ({ user,commImgUrl }) => {
   return (
     <Flex direction="column" bg="white" borderRadius={4} mt={2}>
       <Flex width="100%">
-        {formTabs.map((item) => {
+        {formTabs.map((item,index) => {
           return (
             <TabItem
+            key={index}
               item={item}
               selected={item.title === selectedTab}
               setSelectedTab={setSelectedTab}
